@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="header">User Directory</h1>
-    <h1 class="second">Hello my name is Sasha</h1>
-    <h1>I go to Purdue University</h1>
-    <h1>I'm from California</h1>
+    <h1 class="header">Welcome!</h1>
+    <h1 class="second">User Directory</h1>
     <button>Click Me</button><br>
 
-    <form id = "form1">
-            <br>Name:<br>
-            <input type="text" name="firstname" id="enteredName"><br>
-            <input type="submit" value="Submit">
-          </form>
+    <form name="form">
+            <br>Message:<br>
+            <input type="text" id="message" name="messsage" onchange="getMessage()"><br>
+            <input type="submit" value="Submit" name="submitbutton">
+    </form>
 
     <script src="index.js"></script>
 </body>
