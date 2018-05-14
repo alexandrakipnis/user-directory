@@ -3,20 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>User Directory</title>
+    <title> User Directory </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <h1 class="header">Welcome!</h1>
-    <h1 class="second">User Directory</h1>
-    <button>Click Me</button><br>
+<body style="background-color:powderblue;">
+    <h1 id="header"><center>Welcome!</center></h1>
+    <h1 class="second"><center>-- change this message here --</center></h1>
+    
+    <h1><center>Enter a message!!</center></h1>
 
-    <form name="form">
+    <form name="form"><center>
             <br>Message:<br>
-            <input type="text" id="message" name="messsage" onchange="getMessage()"><br>
-            <input type="submit" value="Submit" name="submitbutton">
-    </form>
+            <input type="text" id="message"><br>
+    </center></form>
+
+    <br><button>Click Me</button><br>
 
     <script src="index.js"></script>
 </body>
