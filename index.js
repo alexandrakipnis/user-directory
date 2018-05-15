@@ -10,10 +10,15 @@ const handleSubmit = function(ev){
     const color = form.favoriteColor.value
     const users = document.querySelector('#users')
 
-    const p = document.createElement('p')
-    p.textContent = `Name: ${userName}, Age: ${age}`
-    p.style.color = color
-    users.appendChild(p)
+    const list = document.createElement('ul')
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${userName}`
+    list.appendChild(nameItem)
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
+    list.style.color = color
+    users.appendChild(list)
 
     const header = document.querySelector('h1.second')
     header.textContent = userName
