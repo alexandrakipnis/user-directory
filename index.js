@@ -30,6 +30,7 @@ const handleSubmit = function(ev){
     header2.textContent = userName
 
     form.reset()
+    form.userName.focus()
 }
 
 form.addEventListener('submit', handleSubmit)
