@@ -11,12 +11,17 @@
     <h1 id="header">Welcome!</h1>
     <h1 class="second">-change this message here-</h1>
 
-    <form name="form">
-            <br>Message:<br>
-            <input type="text" id="message"><br>
+    <form id="userForm">
+        <p>
+            <label for="userName">Name</label>
+            <input type="text" name="userName" autofocus>
+        </p>
+
+        <button type="submit">Go</button>
+        <button type="reset">Clear</button>
     </form>
 
-    <br><button>Click Me</button><br>
+    <div id="users"></div>
 
     <script src="index.js"></script>
 </body>
