@@ -4,7 +4,7 @@ const renderColor = function(favoriteColor){
 
     const colorDiv = document.createElement('div')
     colorDiv.style.backgroundColor = favoriteColor
-    colorDiv.style.width = '3rem'
+    colorDiv.style.width = '12rem'
     colorDiv.style.height = '1rem'
 
     return colorDiv
@@ -13,14 +13,14 @@ const renderColor = function(favoriteColor){
 const renderListItem = function(label, item){
 
     const content = document.createElement('li')
-    content.textContent = `${label}: ${item}`
+    content.textContent = `${label}${item}`
     return content
 }
 
 const renderList = function(userName, age, favoriteColor){
     const list = document.createElement('ul')
-    list.appendChild(renderListItem("Name", userName))
-    list.appendChild(renderListItem("Age", age))
+    list.appendChild(renderListItem("Name: ", userName))
+    list.appendChild(renderListItem("Age: ", age))
     const colorItem = renderListItem("Favorite Color", '')
     colorItem.appendChild(renderColor(favoriteColor))
     list.appendChild(colorItem)
