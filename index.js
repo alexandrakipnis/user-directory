@@ -9,6 +9,6 @@ button.addEventListener('click', function(ev){
     let value = document.querySelector('input').value
     let header = document.querySelector('#header')
     header.textContent = "You clicked the button!"
-    ev.target.textContent = "AHHHH CLICKED"
+    ev.target.textContent = "AHHHH CLICKED!!"
     header2.textContent = value;
 })
