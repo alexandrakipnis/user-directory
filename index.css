@@ -27,6 +27,16 @@ input[type=text]{
     padding: 12px 20px;
 }
 
+input[type=number]{
+    border: 2px solid teal;
+    border-radius: 4px;
+    padding: 12px 20px;
+}
+
 input[type=text]:focus{
+    background-color: antiquewhite;
+}
+
+input[type=number]:focus{
     background-color: antiquewhite;
 }
