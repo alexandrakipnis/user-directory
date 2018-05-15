@@ -1,5 +1,33 @@
 const form = document.querySelector('form#userForm')
 
+const renderColor = function(favoriteColor){
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '3rem'
+    colorDiv.style.height = '1rem'
+
+    return colorDiv
+}
+
+const renderListItem = function(label, item){
+
+    const content = document.createElement('li')
+    content.textContent = `${label}: ${item}`
+    return content
+}
+
+const renderList = function(userName, age, favoriteColor){
+    const list = document.createElement('ul')
+    list.appendChild(renderListItem("Name", userName))
+    list.appendChild(renderListItem("Age", age))
+    const colorItem = renderListItem("Favorite Color", '')
+    colorItem.appendChild(renderColor(favoriteColor))
+    list.appendChild(colorItem)
+
+    return list
+}
+
 const handleSubmit = function(ev){
     ev.preventDefault()
     const form = ev.target
@@ -7,23 +35,17 @@ const handleSubmit = function(ev){
     const age = form.age.value
     const favoriteColor = form.favoriteColor.value
 
-    const color = form.favoriteColor.value
+    
+
     const users = document.querySelector('#users')
+    users.appendChild(renderList(userName, age, favoriteColor))
 
-    const list = document.createElement('ul')
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${userName}`
-    list.appendChild(nameItem)
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
-    list.appendChild(ageItem)
-    list.style.color = color
-    users.appendChild(list)
-
+    //changing header
     const header = document.querySelector('h1.second')
     header.textContent = userName
-    header.style.color = color
+    header.style.color = favoriteColor
 
+    //form reset
     form.reset()
     form.userName.focus()
 }
