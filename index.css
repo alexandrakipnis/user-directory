@@ -1,8 +1,8 @@
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 body{
-    font-family: Poppins, sans-serif;
+    font-family: Quicksand, sans-serif;
     text-align: center;
     font-size: 15pt;
     background-color: powderblue;
@@ -45,9 +45,7 @@ dt{
     margin: 0;
     padding: 0;
     text-align: center; 
-    
 }
-
 
 button{
     background-color: antiquewhite;
