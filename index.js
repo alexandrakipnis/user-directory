@@ -25,25 +25,12 @@ const renderListItem = function(label, item){
 }
 
 //create list item with user information
-const renderList = function(userName, age, favoriteColor){
+const renderList = function(data){
     const list = document.createElement('ul')
 
-    const user = {
-        'Name: ': userName,
-        'Age: ': age,
-        'Favorite Color: ': renderColor(favoriteColor)
-    }
-
-    Object.keys(user).map(function(label) {
-        list.appendChild(renderListItem(label, user[label]))
+    Object.keys(data).map(function(label) {
+        list.appendChild(renderListItem(label, data[label]))
     })
-
-    /*
-    list.appendChild(renderListItem("Name: ", userName))
-    list.appendChild(renderListItem("Age: ", age))
-    const colorItem = renderListItem("Favorite Color", '')
-    colorItem.appendChild(renderColor(favoriteColor))
-    list.appendChild(colorItem)*/
 
     return list
 }
@@ -53,30 +40,30 @@ const handleSubmit = function(ev){
 
     const form = ev.target
 
-    /*const user = {
-        name: form.userName.value,
-        age: form.age.value,
-        favoriteColor = form.favoriteColor.value
-    }*/
-
     const users = document.querySelector('#users')
 
-    /*Object.keys(user).map(function(label) {
-        users.appendChild(renderListItem(label, user[label]))
-    })*/
-
     //declaring users variables
-    const userName = form.userName.value
+    /*const userName = form.userName.value
     const age = form.age.value
-    const favoriteColor = form.favoriteColor.value
+    const favoriteColor = form.favoriteColor.value*/
+
+    const user = {
+        'Name: ': form.userName.value,
+        'Age: ': form.age.value,
+        'Favorite Color: ': renderColor(form.favoriteColor.value)
+    }
+
+  
+    users.appendChild(renderList(user))
+
 
     //append new user to list of users
-    users.appendChild(renderList(userName, age, favoriteColor))
+    //users.appendChild(renderList(userName, age, favoriteColor))
 
     //changing name header
     const header = document.querySelector('h1.second')
-    header.textContent = userName
-    header.style.color = favoriteColor
+    header.textContent = form.userName.value
+    header.style.color = form.favoriteColor.value
 
     //form reset
     form.reset()
