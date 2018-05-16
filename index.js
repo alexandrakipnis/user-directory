@@ -12,7 +12,15 @@ const renderColor = function(favoriteColor){
 //create generic list item
 const renderListItem = function(label, item){
     const content = document.createElement('li')
-    content.textContent = `${label}${item}`
+    content.textContent = `${label}`
+
+    //exception handling
+    try{
+        content.appendChild(item)
+    } catch(e){
+        content.textContent += item
+    }
+    
     return content
 }
 
