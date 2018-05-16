@@ -1,5 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Poppins, sans-serif;
     text-align: center;
     font-size: 15pt;
     background-color: powderblue;
@@ -23,6 +26,28 @@ ul{
 ul li {
     margin: 5px;
 }
+
+dd{
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    text-align: center; 
+    margin: 5px;
+    margin-left: 0px;
+}
+
+dt{
+    display: inline-block;
+    clear: left;
+    margin-right: 5px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+    
+}
+
 
 button{
     background-color: antiquewhite;

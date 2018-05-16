@@ -12,14 +12,19 @@ const renderColor = function(favoriteColor){
 //create generic list item
 const renderListItem = function(label, item){
     const content = document.createElement('li')
-    content.textContent = `${label}`
+    const dtItem = document.createElement('dt')
+    dtItem.textContent = label
 
+    const description = document.createElement('dd')
     //exception handling
     try{
-        content.appendChild(item)
+        description.appendChild(item)
     } catch(e){
-        content.textContent += item
+        description.textContent += item
     }
+
+    content.appendChild(dtItem)
+    content.appendChild(description)
 
     return content
 }
@@ -40,25 +45,18 @@ const handleSubmit = function(ev){
 
     const form = ev.target
 
+    //list of users
     const users = document.querySelector('#users')
 
-    //declaring users variables
-    /*const userName = form.userName.value
-    const age = form.age.value
-    const favoriteColor = form.favoriteColor.value*/
-
+    //user object
     const user = {
         'Name: ': form.userName.value,
         'Age: ': form.age.value,
         'Favorite Color: ': renderColor(form.favoriteColor.value)
     }
 
-  
+    //add user to list of users
     users.appendChild(renderList(user))
-
-
-    //append new user to list of users
-    //users.appendChild(renderList(userName, age, favoriteColor))
 
     //changing name header
     const header = document.querySelector('h1.second')
