@@ -26,19 +26,21 @@ const renderList = function(userName, age, favoriteColor){
 
 const handleSubmit = function(ev){
     ev.preventDefault()
+
     const form = ev.target
     const userName = form.userName.value
     const age = form.age.value
     const favoriteColor = form.favoriteColor.value
-    const backgroundColor = form.backgroundColor.value
+    //const backgroundColor = form.backgroundColor.value
     const users = document.querySelector('#users')
+
     users.appendChild(renderList(userName, age, favoriteColor))
 
     //changing header
     const header = document.querySelector('h1.second')
     header.textContent = userName
     header.style.color = favoriteColor
-    document.body.style.backgroundColor = backgroundColor
+    //document.body.style.backgroundColor = backgroundColor
 
     //form reset
     form.reset()
