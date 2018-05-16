@@ -43,6 +43,7 @@ input[type=text]{
     border: 2px solid teal;
     border-radius: 4px;
     padding: 12px 20px;
+    
 }
 
 input[type=number]{
@@ -68,4 +69,19 @@ input[type=color]{
 
 input[type=color]:focus{
     background-color: antiquewhite;
+}
+
+input[type=button]{
+    background-color: antiquewhite;
+    color: black;
+    padding: 15px 30px;
+    display: inline-block;
+    border: 2px solid teal;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+input[type=button]:hover{
+    background-color: teal;
+    color: white;
 }

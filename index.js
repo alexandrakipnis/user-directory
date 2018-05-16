@@ -1,5 +1,6 @@
 const form = document.querySelector('form#userForm')
 
+//create color div
 const renderColor = function(favoriteColor){
     const colorDiv = document.createElement('div')
     colorDiv.style.backgroundColor = favoriteColor
@@ -8,12 +9,14 @@ const renderColor = function(favoriteColor){
     return colorDiv
 }
 
+//create generic list item
 const renderListItem = function(label, item){
     const content = document.createElement('li')
     content.textContent = `${label}${item}`
     return content
 }
 
+//create list item with user information
 const renderList = function(userName, age, favoriteColor){
     const list = document.createElement('ul')
     list.appendChild(renderListItem("Name: ", userName))
@@ -27,20 +30,22 @@ const renderList = function(userName, age, favoriteColor){
 const handleSubmit = function(ev){
     ev.preventDefault()
 
+    //declaring users variables
     const form = ev.target
     const userName = form.userName.value
     const age = form.age.value
     const favoriteColor = form.favoriteColor.value
-    //const backgroundColor = form.backgroundColor.value
+
+    //list of users
     const users = document.querySelector('#users')
 
+    //append new user to list of users
     users.appendChild(renderList(userName, age, favoriteColor))
 
-    //changing header
+    //changing name header
     const header = document.querySelector('h1.second')
     header.textContent = userName
     header.style.color = favoriteColor
-    //document.body.style.backgroundColor = backgroundColor
 
     //form reset
     form.reset()
